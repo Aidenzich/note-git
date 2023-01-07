@@ -35,53 +35,54 @@
 | Save changes temporarily and switch to a clean working directory | `git stash` |
 | Restore changes from the most recent stash | `git stash pop` |
 
-## Logger in git
+## Show log histories
 | Usage | Command |
 |-|-|
 | Viewing the commit history | `git log` |
 | Viewing the reflog |  `git reflog` or `git log -g` |
 
-## Checking Remote 
+## Remote 
 | Usage | Command |
 |-|-|
 | Manage the set of repositories ("remotes") whose branches you track. | `git remote` |
 | Check remote as HTTPS or SSH | `git remote -v` <br> `git remote --verbose` |
+| Download contents from a remote repository | `git fetch <repository>`  |
+| Fetch all branches from all remotes  | `git fetch -all <repository>`  |
 
-
-
-
-
-<details><summary><strong>git ls-tree</strong></summary>
-
-
-## git ls-tree
-```
-git ls-tree [-d] [-r] [-t] [-l] [-z]
-	    [--name-only] [--name-status] [--full-name] [--full-tree] [--abbrev[=<n>]]
-	    <tree-ish> [<path>…​]
-```
-- Usage
-    ```
-    git ls-tree -r --name-only HEAD
-    ```
-
-| Options | Description |
+## Show changes
+| Usage | Commands |
 |-|-|
-| `-d` | show only the named tree entry itself, not it's children |
-| `-r` | recurse into sub-tree |
-| `-t` | show tree entries even when going to recurse them |
-| `--name-only` ||
+| View changes between the `working tree` and `Staging` | `git diff` |
+| Specific on a file | `git diff <filepath>` |
+| View changes between the `Staging` and commited `commit` | `git diff --cached` |
+| Display only changed file name | `git diff --name-only` |
 
-</details>
-
-## git fetch
+### Select only changed files that match condition
+```bash
+git diff --diff-filter=<condition>
 ```
-git fetch <options> <repository> 
-```
-- `--all` Fetch all remotes.
 
-
-## git reset
+| Conditions | Description |
+|-|-|
+| `A` | Added |
+| `C` | Copied |
+| `D` | Deleted |
+| `M` | Modified |
+| `R` | Renamed |
+| `T` | Have their type (mode) changed |
+| `U` | Unmerged |
+| `X` | Unknown |
+| `B` | Have had their pairing Broken |
+| `*` | All-or-none |
+- Any **combination** of the filter characters may be used. e.g. 
+    ```bash
+    git diff --diff-filter=AD
+    ```
+- These upper-case letters can be downcased to **exclude**. e.g.
+    ```bash
+    git diff --diff-filter=ad
+    ```
+## Options of git reset
 - **Options**
     | Options | Description | Working Directory | Staging | Local Repository |
     |-|-|-|-|-|
@@ -100,7 +101,27 @@ git fetch <options> <repository>
         git reset --hard <commit-id>
         git push -f
         ```
+
+## Others
+### git ls-tree
+```
+git ls-tree [-d] [-r] [-t] [-l] [-z]
+	    [--name-only] [--name-status] [--full-name] [--full-tree] [--abbrev[=<n>]]
+	    <tree-ish> [<path>…​]
+```
+- Usage
+    ```
+    git ls-tree -r --name-only HEAD
+    ```
+
+| Options | Description |
+|-|-|
+| `-d` | show only the named tree entry itself, not it's children |
+| `-r` | recurse into sub-tree |
+| `-t` | show tree entries even when going to recurse them |
+| `--name-only` | Show only names of changed files. |
+
 ## TODO
+- [x] git diff --name-only --diff-filter=U
 - [ ] git checkout <branchname> && git cherry-pick <commitid>
 - [ ] git whatchanged --since='2 weeks ago'
-- [ ] git diff --name-only --diff-filter=U
