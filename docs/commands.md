@@ -47,7 +47,7 @@
 | Manage the set of repositories ("remotes") whose branches you track. | `git remote` |
 | Check remote as HTTPS or SSH | `git remote -v` <br> `git remote --verbose` |
 | Download contents from a remote repository | `git fetch <repository>`  |
-| Fetch all branches from all remotes  | `git fetch -all <repository>`  |
+| Fetch all branches from all remotes  | `git fetch --all <repository>`  |
 
 ## Show changes
 | Usage | Commands |
