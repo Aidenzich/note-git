@@ -2,7 +2,7 @@
 ## The workflow of Git
 ![git_workflow](./assets/git_command_workflow.jpg)
 
-## Documents
+## Documentss
 | Usage | Notes |
 |-|-|
 | Basic commands | [✓](./docs/commands.md) |
