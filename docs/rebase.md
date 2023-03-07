@@ -14,4 +14,5 @@
 ## git flow
 ![gitflow](/assets/rebase_gitflow.svg)
 
-
+## Reference
+- [gitflow source](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
