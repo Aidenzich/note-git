@@ -13,3 +13,4 @@
 | Draw your folder sturcture with git and tree | [✓](./docs/tree.md) |
 | Usage of git submodule | [✓](./docs/submodule.md) |
 | What is detached HEAD?     | [🔧](./docs/detached_head.md) |
+| `git rebase` vs `git merge` | [✓](./docs/rebase.md) |
