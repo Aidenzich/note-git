@@ -48,7 +48,7 @@
 | Check remote as HTTPS or SSH | `git remote -v` <br> `git remote --verbose` |
 | Download contents from a remote repository | `git fetch <repository>`  |
 | Fetch all branches from all remotes  | `git fetch --all <repository>`  |
-
+| Prune tracking branches not on the remote | `git remote prune origin` |
 ## Show changes
 | Usage | Commands |
 |-|-|
